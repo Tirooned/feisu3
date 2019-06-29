@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+      #First-W{
+            width: 100%;
+        }
+        .Title-W{
+            text-align: center;
+            margin: 50px;
+        }
+        .core-z{
+          text-align: center;
+        }
+        .but-z{
+            margin: 0 15% auto;
+        }
+
+
+
+      @media (max-width: 1090px) {
+          .navbar-header {
+              float: none;
+          }
+          .navbar-toggle {
+              display: block;
+          }
+          .navbar-collapse {
+              border-top: 1px solid transparent;
+              box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+          }
+          .navbar-collapse.collapse {
+              display: none!important;
+          }
+          .navbar-nav {
+              float: none!important;
+              margin: 7.5px -15px;
+          }
+          .navbar-nav>li {
+              float: none;
+          }
+          .navbar-nav>li>a {
+              padding-top: 10px;
+              padding-bottom: 10px;
+          }
+          .navbar-text {
+              float: none;
+              margin: 15px 0;
+          }
+          /* since 3.1.0 */
+          .navbar-collapse.collapse.in {
+              display: block!important;
+          }
+          .collapsing {
+              overflow: hidden!important;
+          }
+      }
+      .navbar-fixed-top .navbar-collapse {
+          max-height: none;
+      }
+
+      .navbar {
+          min-height: 58px;
+          margin-bottom: 20px;
+          border: 1px solid transparent;
+          font-size: 15px;
+          font-weight: bold;
+          background: #141c28;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 99999;
+
+      #logo{
+          width: 125px;
+          height: 58px;
+      }
+      }
+      .navbar-default .navbar-nav>.active>a{
+          background: #141c28;
+      }
+      .navbar-nav>li>a{
+          height: 58px;
+          padding-top: 21px;
+          margin-left: 50px;
+      }
+      .navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>.active>a{
+          color: #e4e4e4;
+      }
+      .login{
+          margin-left: 1px;
+      }
+      .navbar-toggle{
+          margin-top: 12px;
+          background: #141c28;
+          color: #999999;
+      }
+        .Central-L{
+            text-align: center;
+        }
+        .button-L{
+           width: 1000px;
+            height: 200px;
+            background: white;
+        }
+        #vvs{
+            width: 500px;
+            height: 100px;
+            background: white;
+            float: right;
+            margin-top: 30px;
+        }
+        #vvc{
+            width: 500px;
+            height: 100px;
+            background: white;
+            float: right;
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="thead">
+    <!--这里放表头-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <img src="../images/logo.png" alt="" width="125" height="58" id="logo">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#"></a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">产品</a></li>
+                    <li><a href="#">表带</a></li>
+                    <li><a href="#">配饰</a></li>
+                    <li><a href="#">活动</a></li>
+                    <li><a href="#">关于我们</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="login">登录/注册</a></li>
+                    <li><a href="#" ><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+<img src="../images/3.png"  id="First-W">
+<div class="container-fluid">
+    <div class="Title-W">
+        <h3>全新单品戒指上市</h3>
+        <span>令时尚气息围绕指间，打造你全身的经典穿搭</span>
+    </div>
+    <div class="row">
+        <img src="https://media.danielwellington.cn/staticbucketdwchinaprod/media/wysiwyg/201905/ring-ldpg-2.jpg" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <img src="https://media.danielwellington.cn/staticbucketdwchinaprod/media/wysiwyg/201905/ring-ldpg-4.jpg?quality=75" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    </div>
+    <div class="row" style="background: #FAFAFA">
+        <button id="vvs">换一换</button>
+       <ul id="ul">
+           <!--<li>
+               <div   class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                   <div class="row">
+                       <img src="../images/12.png"  class="col-lg-12 col-md-12 col-sm-12" >
+                   </div>
+                   <p class="core-z">Classic Ring Dusty rows</p>
+               </div>
+           </li>-->
+       </ul>
+    </div>
+    <div class="Title-W">
+        <h3>搭配灵感</h3>
+        <p>Daniel Wellington全新经典戒指，任何时尚穿搭的点睛之选。 精致、典雅并且轻盈的Daniel Wellington戒指，表面镀以明亮银色或</p>
+        <p>玫瑰金色。 与我们的经典手镯或是极简腕表搭配，打造全新的经典造型。</p>
+    </div>
+    <div>
+        <img src="../images/1_pic.jpg" class="col-lg-12 col-md-12 col-sm-12">
+    </div>
+   <div class="container-fluid" >
+      <div class="row">
+          <button id="vvc">换一换</button>
+      </div>
+       <ul id="oul">
+           <!--<li>
+               <div class="col-lg-3 col-md-3 col-sm-3">
+                   <img src="../images/52.png" class="col-lg-12 col-md-12 col-sm-12">
+                   <div class="Central-L">
+                       <p>ssssssssssss</p>
+                       <p>ssssssssssss</p>
+                       <P>￥230</P>
+                       <button class="button-L">确认</button>
+                   </div>
+               </div>
+           </li>-->
+       </ul>
+   </div>
+</div>
+
+<script>
+   var oUl=document.getElementById('ul');
+   var ooUL=document.getElementById('oul');
+
+
+   // 套装
+$('#oul').on('click','.Central-L',function () {
+    $('.Central-L').css({background:'white'})
+    $(this).css({background:'rgba(69, 51, 196, 0.06)'})
+
+});
+// 戒子
+   $('#ul').on('click','.skt',function () {
+       $('.skt').css({background:'white'})
+       $(this).css({background:'rgba(69, 51, 196, 0.06)'})
+
+   });
+
+
+
+/*    function Ring() {
+       $.ajax({
+           url:'/Ring',
+           type:'post',
+           success:function (res) {
+               let data=res.data;
+               console.log(data);
+               if(res.error) {
+                   alert('失败')
+               }else {
+                   for(let i=0;i<data.length;i++){
+                       aaaa(data[i].img1,data[i].g_name,data[i].rmb)
+                   }
+               }
+           }
+       })
+   }
+   Ring();
+
+function  aaaa(img1,g_name,rmb) {
+    var oLi=document.createElement('li');
+    oLi.innerHTML=`<div  class="col-xs-12 col-sm-3 col-md-3 col-lg-3 skt" >
+        <div class="row">
+            <img src="${img1}"  class="col-lg-12 col-md-12 col-sm-12" >
+        </div>
+        <p class="core-z">${g_name}</p>
+        <p class="core-z">${rmb}</p>
+    </div>`;
+    oUl.appendChild(oLi);
+}*/
+
+   function Ring(){
+      $.ajax({
+          url:'/Ring',
+          type:'post',
+          success:function (res) {
+              var data=res.data;
+              console.log(data);
+              lli()
+              function lli() {
+                  for(let i=0;i<4;i++){
+                      var oLi=document.createElement('li');
+                      oLi.innerHTML=`<div  class="col-xs-12 col-sm-3 col-md-3 col-lg-3 skt" >
+        <div class="row">
+            <img src="${data[i].img1}"  class="col-lg-12 col-md-12 col-sm-12" >
+        </div>
+           <p class="core-z">${data[i].g_name}</p>
+           <p class="core-z">${data[i].rmb}</p>
+        </div>`;
+                      oUl.appendChild(oLi);
+                  }
+              }
+              $('#vvs').click(function () {
+                  oUl.innerHTML='';
+                  data=qh(data,4)
+                  lli()
+              })
+          }
+      })
+   }
+   Ring()
+
+
+
+
+   function Aset() {
+       $.ajax({
+           url:'/Aset',
+           type:'post',
+           success:function (res) {
+               let data = res.data;
+               console.log(data);
+               llc()
+               function llc() {
+                   for(let i=0;i<4;i++){
+                       var oLi=document.createElement('li');
+                       oLi.innerHTML=` <div class="col-lg-3 col-md-3 col-sm-3">
+                      <img src="${data[i].img1}" class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="Central-L">
+                          <p>${data[i].s_name}</p>
+                          <p>${data[i].g_name}</p>
+                          <P>${data[i].rmb}</P>
+                          <button class="button-L">确认</button>
+                      </div>
+                  </div>`;
+                       ooUL.appendChild(oLi);
+                   }
+               }
+               $('#vvc').click(function () {
+                   ooUL.innerHTML='';
+                   data=qh(data,4)
+                   llc()
+               })
+           }
+       })
+   }
+   Aset()
+
+
+
+   function uniq(array){
+       var temp = [];
+       for(var i = 0; i < array.length; i++){
+           if(temp.indexOf(array[i]) == -1){
+               temp.push(array[i]);
+           }
+       }
+       return temp;
+   }
+
+   function qh(data,si) {
+       for(let i=0;i<si;i++){
+           data[data.length]=data[i];
+       }
+       for (let i=0;i<data.length-si;i++){
+           data[i]=data[i+si]
+       }
+       data=uniq(data);
+       return data
+   }
+
+   /*
+      function Aset() {
+          $.ajax({
+              url:'/Aset',
+              type:'post',
+              success:function (res) {
+                  let data=res.data;
+                  console.log(data);
+                  if(res.error) {
+                      alert('失败')
+                  }else {
+                      for(let i=0;i<data.length;i++){
+                       wwww(data[i].s_name,data[i].g_name,data[i].rmb,data[i].img1)
+                      }
+                  }
+              }
+          })
+      }
+      Aset();
+
+      function  wwww(s_name,g_name,rmb,img1) {
+          var oLi=document.createElement('li');
+          oLi.innerHTML=` <div class="col-lg-3 col-md-3 col-sm-3">
+                      <img src="${img1}" class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="Central-L">
+                          <p>${s_name}</p>
+                          <p>${g_name}</p>
+                          <P>${rmb}</P>
+                          <button class="button-L">确认</button>
+                      </div>
+                  </div>`;
+          ooUL.appendChild(oLi);
+      }
+   */
+
+</script>
+</body>
+</html>

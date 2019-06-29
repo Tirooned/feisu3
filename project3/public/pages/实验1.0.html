@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <style>
+    </style>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../ajax.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+</style>
+<body>
+<ul>
+    <button id="aa">加</button>
+<!--<li class="li">
+    <div   class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="row">
+            <img src="../images/12.png"  class="col-lg-12 col-md-12 col-sm-12" >
+        </div>
+        <p class="core-z">Classic Ring Dusty rows</p>
+    </div>
+</li>-->
+</ul>
+<script>
+
+
+    function uniq(array){
+        var temp = [];
+        for(var i = 0; i < array.length; i++){
+            if(temp.indexOf(array[i]) == -1){
+                temp.push(array[i]);
+            }
+        }
+        return temp;
+    }
+    function qh(o,co){
+        for(let i=0;i<co;i++){
+            o[o.length]=o[i];
+        }
+        for(let i=0;i<o.length-co;i++){
+            o[i]=o[i+co];
+        }
+        o=uniq(o);
+        return o;
+    }
+</script>
+</html>

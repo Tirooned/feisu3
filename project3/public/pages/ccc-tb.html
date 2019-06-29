@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../util/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <style>
+        #ccc-tb-nav {
+            background: #333333;
+        }
+        #ccc-tb-dh {
+            margin-left: 50px;
+        }
+        #ccc-tb-dh li {
+            height: 43px;
+            transition: all .5s linear;
+            margin-top:4px ;
+        }
+        #ccc-tb-dh a {
+            color: #fffffa;
+            margin: 0;
+        }
+        #ccc-tb-dh span:hover{
+            border-bottom:1px solid #ffffff ;
+        }
+        /*#ccc-tb-dh li:hover {
+            border-bottom: 1px solid #fffffa;
+        }*/
+        #ccc-tb-zt{
+            margin:0 0 0 50px;
+        }
+        #ccc-tb-zt li {
+            height: 43px;
+            transition: all .5s linear;
+            margin-top:4px ;
+        }
+        #ccc-tb-zt span {
+            color: #fffffa;
+        }
+        #ccc-tb-zt span:hover {
+            padding: 0 0 3px 0;
+            border-bottom: #fffffa 1px solid;
+        }
+    </style>
+</head>
+    <body>
+    <div id="ccc-tb">
+        <!--这里放表头-->
+        <nav class="navbar navbar-default navbar-fixed-top" id="ccc-tb-nav">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" id="ccc-tb-xp">
+                    <img src="../images/logo.png" alt="" width="125" height="58" id="logo">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="#"></a>-->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="ccc-tb-dh">
+                        <li><a href="ccc-sy.html"><span>首页</span></a></li>
+                        <li><a href="zxp-product"><span>产品</span></a></li>
+                        <li><a href="sssss.html"><span>表带</span></a></li>
+                        <li><a href="Accessories.html"><span>配饰</span></a></li>
+                        <li><a href="zxp-activity"><span>活动</span></a></li>
+                        <li><a href="Story.html"><span>关于我们</span></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="ccc-tb-zt">
+                        <li><a href="FHL-Land.html" class="login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                        <li><a href="che.html" ><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    </body>
+</html>

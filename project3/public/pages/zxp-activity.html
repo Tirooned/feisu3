@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/zxp-activity.css">
+    <script src="../util/jquery-3.4.0.js"></script>
+    <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<%-include ccc-tb.html%>
+<div id="thead">
+    <!--这里放表头-->
+   <!-- <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+            <div class="navbar-header">
+                <img src="../images/logo.png" alt="" width="125" height="58" id="logo">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                &lt;!&ndash;<a class="navbar-brand" href="#"></a>&ndash;&gt;
+            </div>
+
+            &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="zxp-product">产品</a></li>
+                    <li><a href="sssss.html">表带</a></li>
+                    <li><a href="Accessories.html">配饰</a></li>
+                    <li><a href="zxp-activity.html">活动</a></li>
+                    <li><a href="Story.html">关于我们</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="login">登录/注册</a></li>
+                    <li><a href="che.html" ><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a></li>
+
+                </ul>
+            </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+        </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+    </nav>-->
+    <div id="boot">
+        <h4>表饰相伴，情意相随</h4>
+        <h1>经典组合</h1>
+    </div>
+</div>
+
+<div id="content">
+    <div class="type">
+        <h3>腕饰组合</h3>
+        <h4>表饰相伴，情意相随</h4>
+    </div>
+    <div class="zxp-tbody container" id="actWrist">
+
+    </div>
+    <div class="type">
+        <h3>表带套装</h3>
+        <h4>可更换表带，解锁多面风格</h4>
+    </div>
+    <div class="zxp-tbody container" id="actWatch">
+
+    </div>
+    <div class="type">
+        <h3>情侣对表</h3>
+        <h4>寄情腕间，共享甜蜜时刻</h4>
+    </div>
+    <div class="zxp-tbody container" id="actLovers">
+
+    </div>
+</div>
+<p id="top"><img  src="../images/button.jpg" alt="" width="30" height="30" title="回到顶部"></p>
+
+<div>
+    <div id="aa">
+        点击质询
+    </div>
+    <div id="box">
+        <ul>
+            <li></li>
+        </ul>
+        <p id="one"><input type="text" id="zInp"><button id="zBtn">发送</button></p>
+    </div>
+</div>
+<%-include ccc-wb.html%>
+
+</body>
+<script>
+    $('#aa').click(function (ev) {
+        $(this).hide();
+        $('#box').show();
+        ev.stopPropagation();
+    });
+    $('#box').click(function (ev) {
+        ev.stopPropagation();
+    });
+
+    var socket = new WebSocket('ws://172.16.8.75:1122');
+    socket.onopen=function () {
+        socket.onmessage=function (ev) {
+            var json=JSON.parse(ev.data);
+            console.log(json);
+            if (json.name!='客服小妹'){
+                $('#box ul').append($(`<li class=""><strong data-id="1">游客：</strong><span>${json.msg}</span></li>`));
+            }
+        }
+    };
+
+    function box() {
+        var msg={name:'客服小妹',msg:$('#zInp').val()};
+        socket.send(JSON.stringify(msg));
+        $('#box ul').append($(`<li class="aa"><strong data-id="1"> :Tourist</strong><p><span>${$('#zInp').val()}</span></p></li>`));
+        $('.aa').css('text-align','right');
+        $('#zInp').val('')
+    }
+
+    $('#zBtn').click(function () {
+        box();
+    });
+    $('#zInp').keyup(function (ev) {
+        if (ev.keyCode==13){
+            box();
+        }
+    });
+    $('body').click(function () {
+        $('#box').hide();
+        $('#aa').show();
+    });
+</script>
+<script src="../js/zxp-activity.js"></script>
+</html>

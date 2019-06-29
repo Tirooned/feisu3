@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            display: none;
+        }
+        li{
+            float: left;
+        }
+    </style>
+    <script src="../js/jquery-3.4.0.js"></script>
+</head>
+<body>
+<div>
+    <ul>
+        <!--<li>
+            <p></p>
+            <img src="" alt="">
+        </li>-->
+    </ul>
+</div>
+<button>换一换</button>
+
+</body>
+<script>
+    var oUL=document.getElementsByTagName('ul')[0];
+    var but=document.querySelector('button')
+
+    $.ajax({
+       url:'Accessories.json',
+        success:function (res) {
+            console.log(res);
+             var data=res.data;
+             cLi();
+           function  cLi() {
+                for (let i=0;i<4;i++){
+                    var oLi=document.createElement('li');
+                    oLi.innerHTML=`<p>${data[i].num}</p>
+                 <img src="${data[i].img}" alt="">`;
+                    oUL.appendChild(oLi)
+                }
+            }
+
+
+
+            $('button').click(function () {
+                oUL.innerHTML='';
+                data=qh(data,4);
+
+                cLi();
+            })
+        }
+
+    })
+
+
+    function uniq(array){
+        var temp = [];
+        for(var i = 0; i < array.length; i++){
+            if(temp.indexOf(array[i]) == -1){
+                temp.push(array[i]);
+            }
+        }
+        return temp;
+    }
+
+    function qh(data,si) {
+        for(let i=0;i<si;i++){
+            data[data.length]=data[i];
+        }
+        for (let i=0;i<data.length-si;i++){
+            data[i]=data[i+si]
+        }
+        data=uniq(data);
+        return data
+    }
+
+</script>
+</html>
